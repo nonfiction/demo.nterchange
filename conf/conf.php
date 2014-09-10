@@ -29,7 +29,7 @@ define('SITE_TIME_ZONE', 'MST7MDT'); // string id of the site's time zone (eg. M
 define('ERROR_EMAIL', 'sysadmin@nonfiction.ca');
 define('CURRENT_SITE', ((isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT']) == 443?'secure':'public'));
 define('SITE_NAME', getenv('SITE_NAME'));
-
+define('PUBLIC_SITE', getenv('PUBLIC_URL'));
 /*
 0 = System is unusable
 1 = Immediate action required
