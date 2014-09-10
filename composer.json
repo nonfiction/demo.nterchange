@@ -1,0 +1,22 @@
+{
+  "require": {
+    "nterchange_pear": "dev-master",
+    "nterchange": "dev-master",
+    "vlucas/phpdotenv": "*",
+    "phpmailer/phpmailer": "dev-master",
+    "leafo/lessphp": "0.4.0"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:nonfiction/nterchange.git"
+    },
+    {
+      "type": "vcs",
+      "url": "git@github.com:nonfiction/nterchange_pear.git"
+    }
+  ],
+  "autoload": {
+    "files": ["conf/conf.php"]
+  }
+}

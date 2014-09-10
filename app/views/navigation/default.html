@@ -1,0 +1,39 @@
+{assign var='ul1' value=$ul1|default:'nav'}
+{assign var='ul2' value=$ul2|default:$ul1}
+{assign var='ul3' value=$ul3|default:$ul2}
+{assign var='dropdown' value=$dropdown|default:false}
+
+{foreach from=$index item=page}
+  <ul class="{$ul1}">
+  {foreach from=$page.children item=page}
+
+    {navDivider page=$page}
+    {navItem page=$page active=$id dropdown=$dropdown}
+
+      {if $page.children}
+        <ul class="{$ul2}">
+        {foreach from=$page.children item=page}
+
+          {navDivider page=$page}
+          {navItem page=$page active=$id dropdown=$dropdown}
+
+            {if $page.children}
+              <ul class="{$ul3}">
+              {foreach from=$page.children item=page}
+
+                {navDivider page=$page}
+                {navItem page=$page active=$id dropdown=$dropdown}</li>
+
+              {/foreach}
+              </ul>
+            {/if}
+          </li>
+
+        {/foreach}
+        </ul>
+      {/if}
+    </li>
+
+  {/foreach}
+  </ul>
+{/foreach}

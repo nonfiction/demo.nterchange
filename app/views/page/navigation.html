@@ -1,0 +1,20 @@
+<h1 class="page-title"><a href="/_page1">{$smarty.env.SITE_NAME}</a></h1>
+
+{* Default navigation view is full.html *}
+{assign var='view' value=$view|default:'default'}
+
+{* Default classes is "default default-default" (navbar view is "navbar navbar-default") *}
+{assign var='class' value=$class|default:"$view-default"}
+
+{* Navigation usually extends from active page up to level 1 (home), but can be stopped short of that *}
+{assign var='level' value=$level|default:1}
+
+{* Navigation is usually built down from home, but a specific page id can be set as root instead *}
+{assign var='head' value=$head|default:0}
+
+{* Assign true to add fake pages (found in navigation_controller.php) *}
+{assign var='filler' value=$filler|default:false}
+
+<nav role="navigation" class="{$view} {$class}">
+  {call controller=navigation action=nav view=$view level=$level head=$head filler=$filler id=$id}
+</nav>

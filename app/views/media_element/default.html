@@ -1,0 +1,5 @@
+<div class="mediaelement" id="mediaelement_{$id}">
+  {$_EDIT_START_}
+  {download_icon file=`$media_file`} <a href="{$_EXTERNAL_CACHE_}{persistent_url file=`$media_file` id=`$id` field=media_file}" title="{$media_file|filesize_format} - Download in approximately {$media_file|download_time} seconds at dialup connection speed.">{$link_title}</a>
+  {$_EDIT_END_}
+</div>

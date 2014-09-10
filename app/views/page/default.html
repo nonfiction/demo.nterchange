@@ -1,0 +1,26 @@
+{no_xhr}
+{include file="page/head.html" template="default"}
+<div class="navbar">
+  {include file="page/navigation.html" view="default"}
+</div>
+
+<div class="pages">
+<div id="page-splash" class="page"></div>
+{/no_xhr}
+
+<div id="page-{$filename}" class="page">
+  <div class="container">
+    <div class="banner">
+      {$BANNER_EDIT_START}{$BANNER}
+    </div>
+    <div class="main-content">
+      {$MAIN_CONTENT_EDIT_START}
+      {$MAIN_CONTENT}
+    </div>
+  </div>
+</div>
+
+{no_xhr}
+</div>
+{include file="page/tail.html"}
+{/no_xhr}

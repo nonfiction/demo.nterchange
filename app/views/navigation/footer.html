@@ -1,0 +1,42 @@
+{assign var='ul1' value=$ul1|default:'nav'}
+{assign var='ul2' value=$ul2|default:$ul1}
+{assign var='ul3' value=$ul3|default:$ul2}
+
+{foreach from=$index item=page}
+  <ul class="{$ul1}">
+  {foreach name=pages from=$page.children item=page}
+
+    {navDivider page=$page}
+    {navItem page=$page active=$id grid='col-sm-6 col-md-4 col-lg-2' }
+
+      {if $page.children}
+        <ul class="{$ul2}">
+        {foreach from=$page.children item=page}
+
+          {navDivider page=$page}
+          {navItem page=$page active=$id}
+
+            {if $page.children}
+              <ul class="{$ul3}">
+              {foreach from=$page.children item=page}
+
+                {navDivider page=$page}
+                {navItem page=$page active=$id}</li>
+
+              {/foreach}
+              </ul>
+            {/if}
+          </li>
+
+        {/foreach}
+        </ul>
+      {/if}
+    </li>
+
+    {if $smarty.foreach.pages.iteration is div by 6}<li class="clearfix visible-lg"></li>{/if}
+    {if $smarty.foreach.pages.iteration is div by 3}<li class="clearfix visible-md"></li>{/if}
+    {if $smarty.foreach.pages.iteration is div by 2}<li class="clearfix visible-sm"></li>{/if}
+
+  {/foreach}
+  </ul>
+{/foreach}

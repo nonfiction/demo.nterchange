@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>{if $title}{$title|strip_tags} - {/if}Vine &amp; Hops</title>
+  <link rel="icon" href="{$_EXTERNAL_CACHE_}/favicon.ico">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="page_id" content="{$id}">
+  {if $meta_description}<meta name="description" content="{$meta_description}">{/if}
+  {if $meta_keywords}<meta name="keywords" content="{$meta_keywords}">{/if}
+  {$HTML_HEADER}
+  <link rel="stylesheet" href="/stylesheets/default">
+  <link href='http://fonts.googleapis.com/css?family=Oswald|Open+Sans:400italic,700italic,400,700,300,600' rel='stylesheet' type='text/css'>
+  <link href="/images/128.png" rel="apple-touch-icon" />
+  {if $smarty.const.IN_SURFTOEDIT}<link rel="stylesheet" href="/surftoedit.css">{/if}
+</head>
+
+<body id="page{$id}" class="{$template}">
+
+  <div class="page-edit">{$_PAGE_EDIT_}</div>

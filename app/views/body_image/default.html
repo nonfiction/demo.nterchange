@@ -1,0 +1,32 @@
+{php}
+$image_file = $this->_tpl_vars['small_image'];
+if (file_exists($_SERVER['DOCUMENT_ROOT'] . "{$small_image}")) {
+  list($width, $height) = getImageSize($_SERVER['DOCUMENT_ROOT'] .$image_file);
+}
+{/php}
+
+<div class="bodyimage" id="bodyimage_{$id}" style="width:{php}print $width;{/php}px;{if $align eq 'center'}margin:0 auto;{elseif $align ne 'default'}float:{$align};{/if}{if $align == 'left'}padding-right:10px;{/if}">
+  {$_EDIT_START_}
+
+  {if $link ne ''}
+    <a href="{$link}"{if $popout ne '0'} target="_blank"{/if}>
+  {elseif $large_image ne ''}
+    <a href="{$_EXTERNAL_CACHE_}{$large_image}" rel="shadowbox">
+  {/if}
+
+  <img src="{$_EXTERNAL_CACHE_}{$small_image}" alt="{$alt}" border="0" />
+
+  {if $large_image ne ''}
+    <div style="text-align:center;">
+      <a href="{$_EXTERNAL_CACHE_}{$large_image}" rel="shadowbox">Click To Enlarge</a>
+  </div>
+  {/if}
+
+  {if $link ne '' || $large_image ne ''}</a>{/if}
+
+  {if $description ne ''}
+    <div class="bodyimagedesc">{$description}</div>
+  {/if}
+
+  {$_EDIT_END_}
+</div>

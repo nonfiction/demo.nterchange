@@ -1,0 +1,25 @@
+<ol class="breadcrumb">
+{foreach from=$index item=page}
+  {if $page.open}
+    {navItem page=$page active=$id}
+  {/if}
+
+  {foreach from=$page.children item=page}
+    {if $page.open}
+      {navItem page=$page active=$id}
+    {/if}
+
+    {foreach from=$page.children item=page}
+      {if $page.open}
+        {navItem page=$page active=$id}
+      {/if}
+
+      {foreach from=$page.children item=page}
+        {if $page.open}
+          {navItem page=$page active=$id}
+        {/if}
+
+	    {/foreach}
+	  {/foreach}
+	{/foreach}
+{/foreach}
