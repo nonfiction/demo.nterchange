@@ -1,18 +1,37 @@
+div { box-sizing: border-box; }
+
 .container {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: @grid-padding;
+  padding-right: @grid-padding;
   max-width: 1022px;
   margin-left: auto;
   margin-right: auto;
 }
 
+img {
+  max-width: 100%;
+}
+
 .row {
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -@grid-padding;
+  margin-right: -@grid-padding;
   overflow: hidden;
 }
 
 .row:after {
   display: table;
   clear: both;
+}
+
+.sidebar, .main-content {
+  float: left;
+  min-height: 1px;
+  padding-left: @grid-padding;
+  padding-right: @grid-padding;
+  width: 100%;
+}
+
+@media (min-width: @screen-md) {
+  .main-content { width: 60%; }
+  .sidebar { width: 40%; }
 }
