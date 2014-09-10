@@ -5,7 +5,7 @@ if (file_exists($_SERVER['DOCUMENT_ROOT'] . "{$small_image}")) {
 }
 {/php}
 
-<div class="bodyimage" id="bodyimage_{$id}" style="width:{php}print $width;{/php}px;{if $align eq 'center'}margin:0 auto;{elseif $align ne 'default'}float:{$align};{/if}{if $align == 'left'}padding-right:10px;{/if}">
+<div class="bodyimage" id="bodyimage_{$id}" style="{if $align eq 'center'}margin:0 auto;{elseif $align ne 'default'}float:{$align};{/if}{if $align == 'left'}padding-right:10px;{/if}">
   {$_EDIT_START_}
 
   {if $link ne ''}
