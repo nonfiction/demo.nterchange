@@ -1,10 +1,29 @@
+a {
+  color: darken(@nf-orange, 15%);
+}
+
+.header-wrapper, .footer-wrapper {
+  padding: 15px 0;
+  background-color: @nf-orange;
+  color: white;
+}
+
+.header-wrapper {
+  margin-bottom: 30px;
+  padding-bottom: 0;
+}
+
+.footer-wrapper {
+  margin-top: 30px;
+}
+
 .main-content {
   border-left: 1px solid #eaeaea;
 }
 
 .sidebar h3 {
-  color: #EEE;
-  background-color: #999;
+  color: #5c5c5c;
+  background-color: #ececec;
   padding: 8px;
   margin: 0;
   font-size: 1em;
@@ -27,4 +46,8 @@
   p {
     margin: 0 0 5px;
   }
+}
+
+.page {
+  min-height: 400px;
 }

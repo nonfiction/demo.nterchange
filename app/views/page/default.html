@@ -1,7 +1,9 @@
 {no_xhr}
 {include file="page/head.html" template="default"}
-<div class="navbar">
-  {include file="page/navigation.html" view="default"}
+<div class="header-wrapper">
+  <div class="navbar">
+    {include file="page/navigation.html" view="default"}
+  </div>
 </div>
 {/no_xhr}
 
@@ -24,5 +26,8 @@
 </div>
 
 {no_xhr}
+<div class="footer-wrapper">
+  {include file="page/footer.html"}
+</div>
 {include file="page/tail.html"}
 {/no_xhr}
