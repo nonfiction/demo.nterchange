@@ -9,18 +9,19 @@ class NewsItemController extends AssetController {
     parent::__construct();
   }
 
-  function latest($count=3){
-    $rendered = 0;
+  function latest($params){
     $html = '';
-    $model = $this->getDefaultModel();
-    $model->find();
+    $count    = array_key_exists('count', $params)    ? $params['count']    : 3;
+    $truncate = array_key_exists('truncate', $params) ? $params['truncate'] : 110;
 
-    while ($model->fetch()) {
-      $this->set($model->toArray());
-      $html .= $this->render(array('action'=>'default', 'return'=>true));
-      $rendered += 1;
-      if ($rendered > $count) break;
+    $this->set('truncate', $truncate);
+
+    $model = $this->getDefaultModel();
+    $items = $model->recent($count);
+
+    foreach ($items as $item) {
+      $this->set($item->toArray());
+      echo $this->render(array('action'=>'default', 'return'=>true));
     }
-    echo $html;
   }
 }

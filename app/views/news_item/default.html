@@ -1,7 +1,8 @@
 <div class="news-item" id="news-item-{$id}">
   {$_EDIT_START_}
-  <h4>{$cms_headline}</h4>
-  <div class="description">{$description}</div>
-  <p><small><a href="{$link}">{$link_title}</a></small></p>
+  <h4 title="{$cms_headline}">{$cms_headline}</h4>
+  <div class="news-item-release-date">{$release_date|date_format}</div>
+  <div class="description">{$description|strip_tags|strip|truncate:$truncate:"..."}</div>
+  <p><small><a target="_blank" href="{$link}">{$link_title}</a></small></p>
   {$_EDIT_END_}
 </div>
