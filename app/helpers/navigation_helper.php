@@ -65,8 +65,10 @@ class NavigationHelper {
 
     $attr['filename'] = $page['filename'];
 
+    $open = (isset($page['open']) && $page['open']) ? 'open': '';
+
     // LI classes
-    $classes = array("page-{$id} {$grid}");
+    $classes = array("page-{$id} {$grid} {$open}");
     if ($page['first']) $classes[] = "first";
     if ($page['last']) $classes[] = "last";
     if (($page['children']) && ($params['dropdown'])) $classes[] = "dropdown-submenu";
