@@ -20,7 +20,7 @@ define('ENVIRONMENT', getenv('ENVIRONMENT'));
 define('SECURE_SITE', false);
 define('ADMIN_SITE', APP_DIR . '/');
 define('ADMIN_URL', false); // this is false by default, or the full domain of the admin (http://admin.example.com/)
-define('SITE_DRAFTS', false);
+define('SITE_DRAFTS', true);
 define('SITE_PERMISSIONS', true);
 define('SITE_WORKFLOW', false);
 define('SITE_PRINTABLE', true);
