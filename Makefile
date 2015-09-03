@@ -4,5 +4,12 @@ default:
 
 .PHONY: snapshot
 snapshot:
-	@mysqldump -uroot -p'winning2011' nterchange_demo > snapshot/db.sql
+	@mysqldump -uroot -p nterchange_demo > snapshot/db.sql
 	@rm -rf snapshot/upload.tgz && tar -czf snapshot/upload.tgz public_html/upload
+
+.PHONY: restore
+restore:
+	@mysql -uroot -p nterchange_demo < snapshot/db.sql
+	@sudo rm -rf public_html/upload
+	@tar xzf snapshot/upload.tgz public_html/
+	@sudo chown -R www-data:www-data public_html/upload
