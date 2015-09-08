@@ -1,0 +1,27 @@
+#search-form { }
+
+#search-results > p {
+  font-size: 0.85em;
+  margin: 1em 0;
+}
+
+#search-results dl {
+  margin: 1em 0 2em;
+}
+
+#search-results dt a {
+  font-weight: bold;
+}
+
+#search-results dt cite {
+  display: block;
+  opacity: 0.8;
+  font-size: 0.85em;
+  line-height: 1.2;
+}
+
+#search-results dd {
+  margin-left: 0;
+  font-size: 0.85em;
+  margin-bottom: 1em;
+}
