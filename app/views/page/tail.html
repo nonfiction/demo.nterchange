@@ -1,9 +1,11 @@
 <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script src="/javascripts/app/"></script>
 
-{dynamic}{if $smarty.const.IN_SURFTOEDIT}
-  <script src="/javascripts/surf-to-edit.js"></script>
-{/if}{/dynamic}
+{* Surf-to-edit JavaScript *}
+{if $smarty.const.IN_SURFTOEDIT}
+<script>window.jQuery || document.write('<script src="//code.jquery.com/jquery-2.1.4.min.js">\x3C/script>')</script>
+<script src="/nterchange/javascripts/surftoedit.js"></script>
+{/if}
 
 <!-- Google Analytics goes here. -->
 {literal}
