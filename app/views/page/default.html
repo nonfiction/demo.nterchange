@@ -18,6 +18,7 @@
         {$SIDEBAR_EDIT_START}{$SIDEBAR}
       </div>
       <div class="main-content">
+        {if $smarty.const.IN_SURFTOEDIT}{if $external_url}<h3>This page is redirected to <a href="{$external_url}">this page</a></h3>{/if}{/if}
         {$MAIN_CONTENT_EDIT_START}
         {$MAIN_CONTENT}
       </div>
