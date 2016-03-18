@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
   <title>{if $title}{$title|strip_tags} - {/if}{$smarty.env.SITE_NAME}</title>
+  {$header}
   <link rel="icon" href="{$_EXTERNAL_CACHE_}/favicon.ico">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,12 +17,6 @@
   <!-- <link href='http://fonts.googleapis.com/css?family=Oswald|Open+Sans:400italic,700italic,400,700,300,600' rel='stylesheet' type='text/css'> -->
   <link href='http://fonts.googleapis.com/css?family=Archivo+Narrow:400,700,400italic' rel='stylesheet' type='text/css'>
   <link href="/images/128.png" rel="apple-touch-icon" />
-
-  {* Surf-to-edit Stylesheet *}
-  {if $smarty.const.IN_SURFTOEDIT}
-  <link rel="stylesheet" href="/nterchange/stylesheets/surftoedit.css">
-  {/if}
-
 </head>
 
 <body id="page{$id}" class="{$template} parent-{$parent_id}">
