@@ -10,7 +10,8 @@ class SearchController extends AssetController {
   public $endpoint = 'http://crawwl.nonserver.com/cores/demo.nterchange.com';
 
   function search($params) {
-    $q = ($this->getParam('q')) ? $this->getParam('q') : '';
+    $q = htmlspecialchars( ($this->getParam('q')) ? $this->getParam('q') : '' );
+    
     if ($q) {
       $q_escaped = urlencode($q);
       $result_url = "{$this->endpoint}?q={$q_escaped}";
